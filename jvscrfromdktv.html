@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8"/>
+        <title> Join Github.Github</title>
+        <link rel="stylesheet" href="CSS/fromdktv.css" type="text/css">
+</head>
+<body>
+    <div id="container">
+        <form name="contact" onsubmit="return CheckForm();" method="post" class="contact" style="font-family: Comic Sans MS">
+            <h2 style="color: white; font-size: 40px" > Create your personal account </h2><br>
+            <ul>
+                <li>
+                    <label for="name"> Username <span class="required" class="required">*</span></label><br>
+                    <input id="name" name="name" type="text" size="40" class="text" tabindex="1"/>
+                    <p class="hide error" id="name-error"></p>
+                </li><br>
+                <li>
+                    <label for="email"> Email address <span class="required" class="required">*</span></label><br>
+                    <input id="email" name="email" placeholder="you@gmail.com" type="text" size="40" class="text" tabindex="1"/>
+                    <p class="hide error" id="email-error"></p>
+                </li><br>
+                <li>
+                    <label for="pass"> Password <span class="required" class="required">*</span></label><br>
+                    <input id="pass" name="pass" type="text" size="40" class="text" tabindex="1"/>
+                    <p class="hide error" id="pass-error"></p>
+                </li><br>
+                <li>
+                    <label for="pass"> Confirm Password <span class="required" class="required">*</span></label><br>
+                    <input id="pass" name="pass" type="text" size="40" class="text" tabindex="1"/>
+                    <p class="hide error" id="pass-error"></p>
+                </li><br>
+                <li>
+                    <input type="submit" name="createanaccount" value="Create an account" class="btn-primary" style="margin-right: 20px" onclick="Createanaccount()"/>
+                    <input type="reset" name="close" value=" Close" class="btn1-primary" style="margin-right: 15px" onclick="Close()"/>
+                </li>
+                <p><i>Tôi đã đọc chấp nhận các điều khoản và quy định</i></p>
+                <br>
+            </ul>
+        </form>
+    </div>
+    <script>
+        function CheckForm(){
+            var user, email, pass, a=document.contact;
+            if(a.name.value==""){
+                document.getElementById("name-error").style.display='block';
+                document.getElementById("name-error").innerHTML='Vui lòng nhập họ tên';
+                a.name.focus();
+                return false;
+            }
+            else document.getElementById("name-error").style.display='none';
+            if(a.email.value==""){
+                document.getElementById("email-error").style.display='block';
+                document.getElementById("email-error").innerHTML='Vui lòng nhập email';
+                a.email.focus();
+                return false;
+            }
+            else document.getElementById("email-error").style.display='none';
+            if(a.pass.value==""){
+                document.getElementById("pass-error").style.display='block';
+                document.getElementById("pass-error").innerHTML='Vui lòng nhập password';
+                a.pass.focus();
+                return false;
+            }
+            else document.getElementById("email-error").style.display='none';
+            if(a.pass.value==""){
+                document.getElementById("pass-error").style.display='block';
+                document.getElementById("pass-error").innerHTML='Vui lòng nhập lại password';
+                a.pass.focus();
+                return false;
+            }
+            else document.getElementById("pass-error").style.display='none';
+            return true;
+        }
+                
+        user= contact.name.value; 
+        email=contact.email.value;
+        pass=contact.pass.value;
+        cfpass=contact.cfpass.value;
+        alert("Đăng ký thành công");
+
+        function Delete()
+            {
+              Delete.user.value="0";
+              Delete.email.value="0";
+              Delete.pass.value="0";
+              Delete.cfpass.value="0";
+            }
+    </script>
+</body>
+</html>
